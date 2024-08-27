@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eisenhower Matrix - CoderCo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="static/logo.png" alt="CoderCo Logo" class="logo">
+            </div>
+            <h1>Eisenhower Matrix</h1>
+        </div>
+
+        <div class="btn-container">
+            <button id="save-matrix" class="btn-primary">Save Matrix</button>
+            <button id="clear-board" class="btn-danger">Clear Board</button>
+            <button id="toggle-theme" class="btn-secondary">Toggle Dark Mode</button>
+            <button id="give-task" class="btn-secondary">Give New Task</button>
+        </div>
+
+        <div id="task-paste-section">
+            <textarea id="task-paste-input" placeholder="Paste your numbered tasks here..."></textarea>
+            <button onclick="pasteTasks()" class="btn-primary">Add Pasted Tasks</button>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="task-search" placeholder="Search tasks...">
+        </div>
+
+        <div id="task-hide-section">
+            <label for="hide-task-start">Hide tasks from:</label>
+            <input type="number" id="hide-task-start" placeholder="Start #">
+            <label for="hide-task-end">to</label>
+            <input type="number" id="hide-task-end" placeholder="End #">
+            <button onclick="hideShowGroup()" class="btn-secondary">Hide/Show Tasks</button>
+        </div>
+
+        <div id="matrix">
+            <div class="horizontal-line"></div>
+            <div class="vertical-line"></div>
+            <div id="label-urgent-important" class="quadrant-label">Urgent & Important</div>
+            <div id="label-not-urgent-important" class="quadrant-label">Not Urgent & Important</div>
+            <div id="label-urgent-not-important" class="quadrant-label">Urgent & Not Important</div>
+            <div id="label-not-urgent-not-important" class="quadrant-label">Not Urgent & Not Important</div>
+        </div>
+    </div>
+
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Task Details</h2>
+            <p id="task-details"></p>
+            <p id="task-description"></p>
+            <button id="mark-complete" class="btn-primary">Mark as Complete</button>
+            <button id="delete-task" class="btn-danger">Delete Task</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
